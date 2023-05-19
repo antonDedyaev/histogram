@@ -1,0 +1,57 @@
+.container {
+    &__histogram {
+        position: relative;
+        width: 995px;
+        min-height: 400px;
+        background: rgba(255, 0, 245, 0.05);
+        border-radius: 27px;
+    }
+
+    &__barsWrapper {
+        display: flex;
+        align-items: end;
+        gap: 11px;
+        height: 270px;
+        width: 792px;
+        margin: 40px 55px 87px 148px;
+    }
+
+    &__amounts {
+        position: absolute;
+        width: 61px;
+        height: 280px;
+        left: 40px;
+        top: 40px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+            list-style: none;
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+
+    &__dates {
+        position: absolute;
+        left: 134px;
+        top: 330px;
+        display: flex;
+        flex-direction: row;
+
+        ul {
+            display: flex;
+            align-items: flex-end;
+            margin: 0;
+            padding: 0;
+            gap: 111px;
+
+            list-style: none;
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}

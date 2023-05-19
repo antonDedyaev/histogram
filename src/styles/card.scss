@@ -1,0 +1,32 @@
+.container {
+    &__card {
+        box-sizing: border-box;
+        margin-top: 95px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        height: 556px;
+        width: 1075px;
+
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 10, 255, 0.1);
+        border-radius: 60px;
+
+        
+    }
+    &__head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 28px;
+
+        h2 {
+            margin: 0;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 42px;
+        }
+    }
+}
