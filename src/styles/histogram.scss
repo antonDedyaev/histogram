@@ -9,11 +9,11 @@
 
     &__barsWrapper {
         display: flex;
-        align-items: end;
+        align-items: flex-end;
         gap: 11px;
-        height: 270px;
+        height: 260px;
         width: 792px;
-        margin: 40px 55px 87px 148px;
+        margin: 53px 55px 87px 148px;
     }
 
     &__amounts {

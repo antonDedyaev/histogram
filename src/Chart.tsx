@@ -14,7 +14,6 @@ const Chart: FC = () => {
           </div>
           <Histogram />
       </div>
-
     </div>
   );
 }

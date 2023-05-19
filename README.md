@@ -17,7 +17,7 @@ git clone https://github.com/antonDedyaev/histogram.git
 2.
 
 ```sh
-make install
+npm install
 ```
 
 ## Запуск:
