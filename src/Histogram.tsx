@@ -15,7 +15,7 @@ const Histogram: FC = () => {
     const calculateBarHeight = (amount: number) => {
         for (let i = 0; i <= scaleValues.length; i++) {
             if (scaleValues[i] < amount && amount <= scaleValues[i + 1]) {
-                const totalBarHeight = 260;
+                const totalBarHeight = 270;
                 const scaleStep = totalBarHeight / 5;
                 const minScaleValue = scaleValues[i];
                 const maxScaleValue = scaleValues[i + 1];

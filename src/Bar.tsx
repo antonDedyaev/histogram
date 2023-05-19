@@ -10,7 +10,7 @@ const Bar = ({ revenue, barHeight, id }: IBarProps) => {
     console.log(barHeight);
     useEffect(() => {
         const bar = document.getElementById(String(id));
-        let actualHeight = Math.floor((barHeight / 260) * 100);
+        let actualHeight = Math.round((barHeight / 270) * 100);
         let height = 1;
         const fillBars = () => {
             if (height >= actualHeight) {
