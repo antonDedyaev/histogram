@@ -11,7 +11,7 @@ https://antondedyaev.github.io/histogram/
 1.
 
 ```sh
-git clone https://github.com/antonDedyaev/my-notes-app/
+git clone https://github.com/antonDedyaev/histogram.git
 ```
 
 2.
