@@ -7,7 +7,6 @@ interface IBarProps {
 }
 
 const Bar = ({ revenue, barHeight, id }: IBarProps) => {
-    console.log(barHeight);
     useEffect(() => {
         const bar = document.getElementById(String(id));
         let actualHeight = Math.round((barHeight / 270) * 100);

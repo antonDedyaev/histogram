@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Bar from './Bar';
 
 interface IData {
@@ -7,21 +7,36 @@ interface IData {
     revenueSum: number;
 }
 
-const Histogram: FC = () => {
+const Histogram = ({scaleMax}: {scaleMax: number}) => {
     const [data, setData] = useState<IData[]>([]);
 
-    const scaleValues = [0, 500, 1000, 2000, 5000, 10000];
+    const getYScale = (num: number) => {
+        const scaleValues = [num];
+        let scaleStep = num;
+        for (let i = 0; i < 4; i++) {
+            scaleStep /= 2;
+            if (String(scaleStep)[1] !== '0') {
+                const roundedValue = String(scaleStep)[0] + '0' + String(scaleStep).slice(2);
+                scaleStep = Number(roundedValue)
+            }
+            scaleValues.unshift(scaleStep);
+        }
+        scaleValues.unshift(0);
+        return scaleValues;
+    };
+
+    const currentYScale = getYScale(scaleMax);
 
     const calculateBarHeight = (amount: number) => {
-        for (let i = 0; i <= scaleValues.length; i++) {
-            if (scaleValues[i] < amount && amount <= scaleValues[i + 1]) {
+        for (let i = 0; i <= currentYScale.length; i++) {
+            if (currentYScale[i] < amount && amount <= currentYScale[i + 1]) {
                 const totalBarHeight = 270;
                 const scaleStep = totalBarHeight / 5;
-                const minScaleValue = scaleValues[i];
-                const maxScaleValue = scaleValues[i + 1];
+                const minScaleValue = currentYScale[i];
+                const maxScaleValue = currentYScale[i + 1];
                 const delta = maxScaleValue - minScaleValue;
                 const percentOfDelta = delta / (amount - minScaleValue);
-                return scaleValues.indexOf(minScaleValue) * scaleStep + scaleStep / percentOfDelta;
+                return currentYScale.indexOf(minScaleValue) * scaleStep + scaleStep / percentOfDelta;
             }
         }
     };
@@ -54,7 +69,7 @@ const Histogram: FC = () => {
             </div>
             <div className="container__amounts">
                 <ul>
-                    {scaleValues.reverse().map((value, index) => (
+                    {currentYScale.reverse().map((value, index) => (
                         <li key={index}>{value}</li>
                     ))}
                 </ul>

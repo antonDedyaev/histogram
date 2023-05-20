@@ -12,7 +12,7 @@ const Chart: FC = () => {
             <h2>Динамика дохода</h2>
             <Dropdown />
           </div>
-          <Histogram />
+          <Histogram scaleMax={10000} />
       </div>
     </div>
   );
